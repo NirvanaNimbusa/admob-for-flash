@@ -39,9 +39,10 @@ The Google Mobile Ads SDK is the latest generation in Google mobile advertising 
 - [x] Support Rewarded Video
 - [x] Support landscape and portrait  and autoOrient
 - [x] Support AdRequest targeting methods,such as children target,test mode
-- [x] Support Air SDK 30 to the last version 
-- [x] Support IOS 8 to ios 12 
+- [x] Support Air SDK 32 and Air 33
+- [x] Support IOS 8 to ios 13 
 - [x] Very simple API
+- [x] Support android x64,x86,arm
 
 
 ## Quick Start
@@ -49,7 +50,7 @@ The Google Mobile Ads SDK is the latest generation in Google mobile advertising 
 Add Admob ane to air project build path , add the follow code in the script file
 ```
     import so.cuo.platform.admob.*;
-    Admob.getInstance().initAdmobSDK("your admob app ID");
+    Admob.getInstance().initAdmobSDK(new ExtraParameter());
 
 ```
 #### 2.Add Admob Banner in adobe Air App 
@@ -96,7 +97,6 @@ If you want to test the ads or the your app with children target,you can set wit
        extraParam=new ExtraParameter();
 	extraParam.testDeviceID="true";
 	extraParam.isChildApp=true;//if is tagForChildDirectedTreatment,set true
-        extraParam.isDesignedForFamilies=true;
         extraParam.nonPersonalizedAds=true;//if want to load non Personalized ads set true
 	Admob.getInstance().showBanner("Your banner ID",AdmobSize.BANNER_320x50,AdmobPosition.BOTTOM_CENTER,80,extraParam);
 ```
@@ -143,15 +143,17 @@ if(admob.isVideoReady()){
 
 
 ###  10.IOS  min version config
-MinimumOSVersion is required for ios ,admob reqired ios 8 and later
+MinimumOSVersion is required for ios ,admob reqired ios 8 and later;GADApplicationIdentifier is required by admob 7.1 and later
 ```
 	<key>MinimumOSVersion</key>
-        <string>8.0</string>
+        <string>9.0</string>
 ```
 simple example
 ```
  <iPhone>
         <InfoAdditions><![CDATA[
+ <key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-3940256099942544~1458002511</string>
 			<key>UIDeviceFamily</key>
 			<array>
 				<string>1</string>
@@ -212,11 +214,11 @@ Admob.getInstance().getScreenSize()
 <extensionID>so.cuo.platform.admob</extensionID>
 ```
 
-## change log 20190101
+## change log 20190925
 1.update admob sdk     
-2.support banner id for each banner    
-3.improve fill rate of video    
-4. support ios 12    and air 32    
+2.support ios 13    
+3.support android x64,arm,x86    
+4. support air 32 and air 33    
 
 [more](https://github.com/lilili87222/admob-for-flash/blob/master/changelog.txt)    
 
