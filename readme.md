@@ -223,11 +223,10 @@ Admob.getInstance().getScreenSize()
 <extensionID>so.cuo.platform.admob</extensionID>
 ```
 
-## change log 20190925
+## change log 20200525
 1.update admob sdk     
-2.support ios 13    
-3.support android x64,arm,x86    
-4. support air 32 and air 33    
+2.support last ios   and  air 33.1 
+
 
 [more](https://github.com/lilili87222/admob-for-flash/blob/master/changelog.txt)    
 
